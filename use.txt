@@ -1,0 +1,72 @@
+INSERT BUILDERS
+insert_builder(1, 'John Doe', '1234567890', 'john.doe@example.com', 'johndoe',  'password', '123 Main St, Anytown, USA');
+insert_builder(2, 'Jane Smith', '2345678901', 'jane.smith@example.com', 'janesmith', 'password123', '456 Elm St, Anytown, USA');
+insert_builder(3, 'Bob Johnson', '3456789012', 'bob.johnson@example.com', 'bobjohnson', 'abc123', '789 Oak St, Anytown, USA');
+insert_builder(4, 'Alice Lee', '4567890123', 'alice.lee@example.com', 'alicelee', 'password456', '321 Maple St, Anytown, USA');
+insert_builder(5, 'Mark Davis', '5678901234', 'mark.davis@example.com', 'markdavis', 'def456', '654 Pine St, Anytown, USA');
+insert_builder(6, 'Samantha Kim', '6789012345', 'samantha.kim@example.com', 'samanthakim', 'password789', '987 Cedar St, Anytown, USA');
+
+INSERT PROPERTY_TYPE
+insert_property_type(1, 'House', 'A standalone building with a yard and one or more floors');
+insert_property_type(2, 'Apartment', 'A multi-unit building with individual living spaces for rent');
+insert_property_type(3, 'Condo', 'A privately-owned unit in a multi-unit building or complex');
+insert_property_type(4, 'Townhouse', 'A multi-level, attached housing unit with shared walls and outdoor space');
+insert_property_type(5, 'Duplex', 'A two-unit building with separate entrances for each living space');
+insert_property_type(6, 'Mansion', 'A large, luxurious house with extensive grounds and amenities');
+
+INSERT SELLER
+insert_seller(1, 'John Smith', '555-1234', 'john.smith@example.com', 'jsmith', 'password123', '123 Main St');
+insert_seller(2, 'Jane Doe', '555-5678', 'jane.doe@example.com', 'jdoe', 'password456', '456 Elm St');
+insert_seller(3, 'Bob Johnson', '555-9012', 'bob.johnson@example.com', 'bjohnson', 'password789', '789 Oak St');
+insert_seller(4, 'Alice Lee', '555-3456', 'alice.lee@example.com', 'alee', 'abc123', '321 Maple St');
+insert_seller(5, 'Mark Davis', '555-7890', 'mark.davis@example.com', 'mdavis', 'def456', '654 Pine St');
+insert_seller(6, 'Samantha Kim', '555-2345', 'samantha.kim@example.com', 'skim', 'passwordabc', '987 Cedar St');
+
+INSERT AGENT
+insert_agent(1, 'John Smith', '555-1234', 'john.smith@example.com', 'jsmith', 'password123', '123 Main St');
+insert_agent(2, 'Jane Doe', '555-5678', 'jane.doe@example.com', 'jdoe', 'password456', '456 Elm St');
+insert_agent(3, 'Bob Johnson', '555-9012', 'bob.johnson@example.com', 'bjohnson', 'password789', '789 Oak St');
+insert_agent(4, 'Alice Lee', '555-3456', 'alice.lee@example.com', 'alee', 'passwordabc', '321 Maple St');
+insert_agent(5, 'Mark Davis', '555-7890', 'mark.davis@example.com', 'mdavis', 'passworddef', '654 Pine St');
+
+INSERT BUYER
+insert_buyer(1, 'Jane Doe', '555-5678', 'jane.doe@example.com', 'jdoe', 'password456', '456 Elm St');
+insert_buyer(2, 'John Smith', '555-1234', 'john.smith@example.com', 'jsmith', 'password123', '123 Main St');
+insert_buyer(3, 'Bob Johnson', '555-9012', 'bob.johnson@example.com', 'bjohnson', 'password789', '789 Oak St');
+insert_buyer(4, 'Alice Lee', '555-3456', 'alice.lee@example.com', 'alee', 'passwordabc', '321 Maple St');
+insert_buyer(5, 'Mark Davis', '555-7890', 'mark.davis@example.com', 'mdavis', 'passworddef', '654 Pine St');
+insert_buyer(6, 'Samantha Kim', '555-2345', 'samantha.kim@example.com', 'skim', 'passwordghi', '987 Cedar St');
+
+INSERT PROPERTY
+insert_property(1, 'Cozy Cottage', 1, 'A small and charming cottage', 1, 2, 1);
+insert_property(2, 'Modern Condo', 2, 'A sleek and contemporary condo', 3, 4, 2);
+insert_property(3, 'Spacious Family Home', 2, 'A large and comfortable family home', 4, 5, 3);
+insert_property(4, 'Luxury Penthouse', 3, 'A luxurious and expansive penthouse', 5, 6, 4);
+insert_property(5, 'Rustic Cabin', 4, 'A cozy and rustic cabin in the woods', 1, 2, 5);
+
+INSERT APPROVAL
+BEGIN
+    add_approval(1, 'Approval 1', 'Type A');
+    add_approval(2, 'Approval 2', 'Type B');
+    add_approval(3, 'Approval 3', 'Type C');
+    add_approval(4, 'Approval 4', 'Type A');
+    add_approval(5, 'Approval 5', 'Type B');
+END;
+
+INSERT PROPERTY APPROVAL
+BEGIN
+    insert_property_approval(1, 1);
+    insert_property_approval(1, 2);
+    insert_property_approval(2, 3);
+    insert_property_approval(3, 2);
+    insert_property_approval(4, 1);
+END;
+
+INSERT REGISTRATION
+BEGIN
+    insert_registration(1, 'Registration 1', 'Type A', 'REG-0001', TO_DATE('2023-04-29', 'YYYY-MM-DD'), 'Description 1', 1, 4);
+    insert_registration(2, 'Registration 2', 'Type B', 'REG-0002', TO_DATE('2023-04-28', 'YYYY-MM-DD'), 'Description 2', 2, 4);
+    insert_registration(3, 'Registration 3', 'Type C', 'REG-0003', TO_DATE('2023-04-27', 'YYYY-MM-DD'), 'Description 3', 2, 5);
+    insert_registration(4, 'Registration 4', 'Type A', 'REG-0004', TO_DATE('2023-04-26', 'YYYY-MM-DD'), 'Description 4', 3, 5);
+    insert_registration(5, 'Registration 5', 'Type B', 'REG-0005', TO_DATE('2023-04-25', 'YYYY-MM-DD'), 'Description 5', 3, 6);
+END;
